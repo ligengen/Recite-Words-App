@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'clk'
+Slack : -5.621
+TNS   : -1791.406
+
+Type  : Slow Model Setup 'color_controller:u1|vga_calc:u1|vga640480:u1|clk'
+Slack : -5.548
+TNS   : -49.892
+
+Type  : Slow Model Setup 'color_controller:u1|vga_calc:u1|vga640480:u1|clktmp'
+Slack : 20.591
+TNS   : 0.000
+
+Type  : Slow Model Hold 'clk'
+Slack : -3.169
+TNS   : -3.169
+
+Type  : Slow Model Hold 'color_controller:u1|vga_calc:u1|vga640480:u1|clktmp'
+Slack : -0.857
+TNS   : -0.857
+
+Type  : Slow Model Hold 'color_controller:u1|vga_calc:u1|vga640480:u1|clk'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : 3.758
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'color_controller:u1|vga_calc:u1|vga640480:u1|clktmp'
+Slack : 8.758
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'color_controller:u1|vga_calc:u1|vga640480:u1|clk'
+Slack : 18.758
+TNS   : 0.000
+
+Type  : Fast Model Setup 'color_controller:u1|vga_calc:u1|vga640480:u1|clk'
+Slack : 5.034
+TNS   : 0.000
+
+Type  : Fast Model Setup 'clk'
+Slack : 5.124
+TNS   : 0.000
+
+Type  : Fast Model Setup 'color_controller:u1|vga_calc:u1|vga640480:u1|clktmp'
+Slack : 20.273
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clk'
+Slack : -1.748
+TNS   : -1.748
+
+Type  : Fast Model Hold 'color_controller:u1|vga_calc:u1|vga640480:u1|clktmp'
+Slack : -0.393
+TNS   : -0.393
+
+Type  : Fast Model Hold 'color_controller:u1|vga_calc:u1|vga640480:u1|clk'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : 4.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'color_controller:u1|vga_calc:u1|vga640480:u1|clktmp'
+Slack : 9.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'color_controller:u1|vga_calc:u1|vga640480:u1|clk'
+Slack : 19.000
+TNS   : 0.000
+
+------------------------------------------------------------

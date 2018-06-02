@@ -1,0 +1,145 @@
+
+State Machine - |fps_game|game_controller:controller|object_statuses[9]
+Name object_statuses[9].attack~reg0 object_statuses[9].selected~reg0 object_statuses[9].normal~reg0 
+object_statuses[9].normal~reg0 0 0 0 
+object_statuses[9].selected~reg0 0 1 1 
+object_statuses[9].attack~reg0 1 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_statuses[8]
+Name object_statuses[8].attack~reg0 object_statuses[8].selected~reg0 object_statuses[8].normal~reg0 
+object_statuses[8].normal~reg0 0 0 0 
+object_statuses[8].selected~reg0 0 1 1 
+object_statuses[8].attack~reg0 1 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_statuses[7]
+Name object_statuses[7].attack~reg0 object_statuses[7].selected~reg0 object_statuses[7].normal~reg0 
+object_statuses[7].normal~reg0 0 0 0 
+object_statuses[7].selected~reg0 0 1 1 
+object_statuses[7].attack~reg0 1 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_statuses[6]
+Name object_statuses[6].attack~reg0 object_statuses[6].selected~reg0 object_statuses[6].normal~reg0 
+object_statuses[6].normal~reg0 0 0 0 
+object_statuses[6].selected~reg0 0 1 1 
+object_statuses[6].attack~reg0 1 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_statuses[5]
+Name object_statuses[5].attack~reg0 object_statuses[5].selected~reg0 object_statuses[5].normal~reg0 
+object_statuses[5].normal~reg0 0 0 0 
+object_statuses[5].selected~reg0 0 1 1 
+object_statuses[5].attack~reg0 1 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_statuses[4]
+Name object_statuses[4].attack~reg0 object_statuses[4].selected~reg0 object_statuses[4].normal~reg0 
+object_statuses[4].normal~reg0 0 0 0 
+object_statuses[4].selected~reg0 0 1 1 
+object_statuses[4].attack~reg0 1 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_statuses[3]
+Name object_statuses[3].attack~reg0 object_statuses[3].selected~reg0 object_statuses[3].normal~reg0 
+object_statuses[3].normal~reg0 0 0 0 
+object_statuses[3].selected~reg0 0 1 1 
+object_statuses[3].attack~reg0 1 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_statuses[2]
+Name object_statuses[2].attack~reg0 object_statuses[2].selected~reg0 object_statuses[2].normal~reg0 
+object_statuses[2].normal~reg0 0 0 0 
+object_statuses[2].selected~reg0 0 1 1 
+object_statuses[2].attack~reg0 1 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_statuses[1]
+Name object_statuses[1].attack~reg0 object_statuses[1].selected~reg0 object_statuses[1].normal~reg0 
+object_statuses[1].normal~reg0 0 0 0 
+object_statuses[1].selected~reg0 0 1 1 
+object_statuses[1].attack~reg0 1 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_statuses[0]
+Name object_statuses[0].attack~reg0 object_statuses[0].selected~reg0 object_statuses[0].normal~reg0 
+object_statuses[0].normal~reg0 0 0 0 
+object_statuses[0].selected~reg0 0 1 1 
+object_statuses[0].attack~reg0 1 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_types[9]
+Name object_types[9].enemy~reg0 object_types[9].tommygun~reg0 object_types[9].medical~reg0 object_types[9].none~reg0 
+object_types[9].none~reg0 0 0 0 0 
+object_types[9].medical~reg0 0 0 1 1 
+object_types[9].tommygun~reg0 0 1 0 1 
+object_types[9].enemy~reg0 1 0 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_types[8]
+Name object_types[8].enemy~reg0 object_types[8].tommygun~reg0 object_types[8].medical~reg0 object_types[8].none~reg0 
+object_types[8].none~reg0 0 0 0 0 
+object_types[8].medical~reg0 0 0 1 1 
+object_types[8].tommygun~reg0 0 1 0 1 
+object_types[8].enemy~reg0 1 0 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_types[7]
+Name object_types[7].enemy~reg0 object_types[7].tommygun~reg0 object_types[7].medical~reg0 object_types[7].none~reg0 
+object_types[7].none~reg0 0 0 0 0 
+object_types[7].medical~reg0 0 0 1 1 
+object_types[7].tommygun~reg0 0 1 0 1 
+object_types[7].enemy~reg0 1 0 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_types[6]
+Name object_types[6].enemy~reg0 object_types[6].tommygun~reg0 object_types[6].medical~reg0 object_types[6].none~reg0 
+object_types[6].none~reg0 0 0 0 0 
+object_types[6].medical~reg0 0 0 1 1 
+object_types[6].tommygun~reg0 0 1 0 1 
+object_types[6].enemy~reg0 1 0 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_types[5]
+Name object_types[5].enemy~reg0 object_types[5].tommygun~reg0 object_types[5].medical~reg0 object_types[5].none~reg0 
+object_types[5].none~reg0 0 0 0 0 
+object_types[5].medical~reg0 0 0 1 1 
+object_types[5].tommygun~reg0 0 1 0 1 
+object_types[5].enemy~reg0 1 0 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_types[4]
+Name object_types[4].enemy~reg0 object_types[4].tommygun~reg0 object_types[4].medical~reg0 object_types[4].none~reg0 
+object_types[4].none~reg0 0 0 0 0 
+object_types[4].medical~reg0 0 0 1 1 
+object_types[4].tommygun~reg0 0 1 0 1 
+object_types[4].enemy~reg0 1 0 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_types[3]
+Name object_types[3].enemy~reg0 object_types[3].tommygun~reg0 object_types[3].medical~reg0 object_types[3].none~reg0 
+object_types[3].none~reg0 0 0 0 0 
+object_types[3].medical~reg0 0 0 1 1 
+object_types[3].tommygun~reg0 0 1 0 1 
+object_types[3].enemy~reg0 1 0 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_types[2]
+Name object_types[2].enemy~reg0 object_types[2].tommygun~reg0 object_types[2].medical~reg0 object_types[2].none~reg0 
+object_types[2].none~reg0 0 0 0 0 
+object_types[2].medical~reg0 0 0 1 1 
+object_types[2].tommygun~reg0 0 1 0 1 
+object_types[2].enemy~reg0 1 0 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_types[1]
+Name object_types[1].enemy~reg0 object_types[1].tommygun~reg0 object_types[1].medical~reg0 object_types[1].none~reg0 
+object_types[1].none~reg0 0 0 0 0 
+object_types[1].medical~reg0 0 0 1 1 
+object_types[1].tommygun~reg0 0 1 0 1 
+object_types[1].enemy~reg0 1 0 0 1 
+
+State Machine - |fps_game|game_controller:controller|object_types[0]
+Name object_types[0].enemy~reg0 object_types[0].tommygun~reg0 object_types[0].medical~reg0 object_types[0].none~reg0 
+object_types[0].none~reg0 0 0 0 0 
+object_types[0].medical~reg0 0 0 1 1 
+object_types[0].tommygun~reg0 0 1 0 1 
+object_types[0].enemy~reg0 1 0 0 1 
+
+State Machine - |fps_game|game_controller:controller|control_state
+Name control_state.update_post control_state.object_iter control_state.post_act control_state.post_iter control_state.waiting 
+control_state.waiting 0 0 0 0 0 
+control_state.post_iter 0 0 0 1 1 
+control_state.post_act 0 0 1 0 1 
+control_state.object_iter 0 1 0 0 1 
+control_state.update_post 1 0 0 0 1 
+
+State Machine - |fps_game|sensor:post_sensor|current_state
+Name current_state.check_sum current_state.value_data current_state.type_data current_state.head 
+current_state.head 0 0 0 0 
+current_state.type_data 0 0 1 1 
+current_state.value_data 0 1 0 1 
+current_state.check_sum 1 0 0 1 

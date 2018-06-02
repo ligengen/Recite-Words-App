@@ -1,0 +1,1509 @@
+Analysis & Synthesis report for fps_game
+Sat Jun 02 21:56:37 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |fps_game|game_controller:controller|object_statuses[9]
+  8. State Machine - |fps_game|game_controller:controller|object_statuses[8]
+  9. State Machine - |fps_game|game_controller:controller|object_statuses[7]
+ 10. State Machine - |fps_game|game_controller:controller|object_statuses[6]
+ 11. State Machine - |fps_game|game_controller:controller|object_statuses[5]
+ 12. State Machine - |fps_game|game_controller:controller|object_statuses[4]
+ 13. State Machine - |fps_game|game_controller:controller|object_statuses[3]
+ 14. State Machine - |fps_game|game_controller:controller|object_statuses[2]
+ 15. State Machine - |fps_game|game_controller:controller|object_statuses[1]
+ 16. State Machine - |fps_game|game_controller:controller|object_statuses[0]
+ 17. State Machine - |fps_game|game_controller:controller|object_types[9]
+ 18. State Machine - |fps_game|game_controller:controller|object_types[8]
+ 19. State Machine - |fps_game|game_controller:controller|object_types[7]
+ 20. State Machine - |fps_game|game_controller:controller|object_types[6]
+ 21. State Machine - |fps_game|game_controller:controller|object_types[5]
+ 22. State Machine - |fps_game|game_controller:controller|object_types[4]
+ 23. State Machine - |fps_game|game_controller:controller|object_types[3]
+ 24. State Machine - |fps_game|game_controller:controller|object_types[2]
+ 25. State Machine - |fps_game|game_controller:controller|object_types[1]
+ 26. State Machine - |fps_game|game_controller:controller|object_types[0]
+ 27. State Machine - |fps_game|game_controller:controller|control_state
+ 28. State Machine - |fps_game|sensor:post_sensor|current_state
+ 29. Registers Removed During Synthesis
+ 30. Removed Registers Triggering Further Register Optimizations
+ 31. General Register Statistics
+ 32. Inverted Register Statistics
+ 33. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 34. Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Mod0
+ 35. Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Mod1
+ 36. Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Mod2
+ 37. Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div5
+ 38. Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div6
+ 39. Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div7
+ 40. Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div0
+ 41. Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div1
+ 42. Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div2
+ 43. Parameter Settings for Inferred Entity Instance: color_controller:u1|vga_calc:u1|lpm_mult:Mult0
+ 44. Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div3
+ 45. Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div4
+ 46. lpm_mult Parameter Settings by Entity Instance
+ 47. Port Connectivity Checks: "color_controller:u1|vga_calc:u1|sram_controller:u2"
+ 48. Port Connectivity Checks: "color_controller:u1"
+ 49. Port Connectivity Checks: "game_controller:controller|RandomNumber:random_generator"
+ 50. Elapsed Time Per Partition
+ 51. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Jun 02 21:56:37 2018      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; fps_game                                   ;
+; Top-level Entity Name              ; fps_game                                   ;
+; Family                             ; Cyclone II                                 ;
+; Total logic elements               ; 6,122                                      ;
+;     Total combinational functions  ; 5,708                                      ;
+;     Dedicated logic registers      ; 792                                        ;
+; Total registers                    ; 792                                        ;
+; Total pins                         ; 112                                        ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C70F672C8       ;                    ;
+; Top-level entity name                                                      ; fps_game           ; fps_game           ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; fps_game.vhd                     ; yes             ; User VHDL File               ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/fps_game.vhd                 ;         ;
+; game_controller.vhd              ; yes             ; User VHDL File               ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/game_controller.vhd          ;         ;
+; my_lib/data_type.vhd             ; yes             ; User VHDL File               ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/my_lib/data_type.vhd         ;         ;
+; sensor.vhd                       ; yes             ; User VHDL File               ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/sensor.vhd                   ;         ;
+; color_controller.vhd             ; yes             ; User VHDL File               ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/color_controller.vhd         ;         ;
+; led_converter.vhd                ; yes             ; User VHDL File               ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/led_converter.vhd            ;         ;
+; uart.vhd                         ; yes             ; User VHDL File               ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/uart.vhd                     ;         ;
+; utils/RandomNumber.vhd           ; yes             ; User VHDL File               ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/utils/RandomNumber.vhd       ;         ;
+; SixtyHzSignalGenerator.vhd       ; yes             ; User VHDL File               ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/SixtyHzSignalGenerator.vhd   ;         ;
+; vga_calc.vhd                     ; yes             ; User VHDL File               ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/vga_calc.vhd                 ;         ;
+; vga640480.vhd                    ; yes             ; User VHDL File               ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/vga640480.vhd                ;         ;
+; sram_controller.vhd              ; yes             ; User VHDL File               ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/sram_controller.vhd          ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_divide.tdf          ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/abs_divider.inc         ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/sign_div_unsign.inc     ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc          ;         ;
+; db/lpm_divide_2jo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/lpm_divide_2jo.tdf        ;         ;
+; db/abs_divider_cag.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/abs_divider_cag.tdf       ;         ;
+; db/alt_u_div_40f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/alt_u_div_40f.tdf         ;         ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/add_sub_lkc.tdf           ;         ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/add_sub_mkc.tdf           ;         ;
+; db/lpm_abs_kq9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/lpm_abs_kq9.tdf           ;         ;
+; db/lpm_divide_5so.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/lpm_divide_5so.tdf        ;         ;
+; db/abs_divider_ibg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/abs_divider_ibg.tdf       ;         ;
+; db/alt_u_div_g2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/alt_u_div_g2f.tdf         ;         ;
+; db/lpm_abs_iq9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/lpm_abs_iq9.tdf           ;         ;
+; db/lpm_abs_sr9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/lpm_abs_sr9.tdf           ;         ;
+; db/lpm_divide_eso.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/lpm_divide_eso.tdf        ;         ;
+; db/abs_divider_rbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/abs_divider_rbg.tdf       ;         ;
+; db/alt_u_div_23f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/alt_u_div_23f.tdf         ;         ;
+; db/lpm_abs_3s9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/lpm_abs_3s9.tdf           ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_2ch.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/add_sub_2ch.tdf           ;         ;
+; db/add_sub_6ch.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/add_sub_6ch.tdf           ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.0/quartus/libraries/megafunctions/altshift.tdf            ;         ;
+; db/lpm_divide_fso.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/lpm_divide_fso.tdf        ;         ;
+; db/abs_divider_sbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/abs_divider_sbg.tdf       ;         ;
+; db/alt_u_div_33f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/alt_u_div_33f.tdf         ;         ;
+; db/lpm_abs_5s9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Root Lee/Desktop/FPGA_FPS-master/db/lpm_abs_5s9.tdf           ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 6,122 ;
+;                                             ;       ;
+; Total combinational functions               ; 5708  ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 1701  ;
+;     -- 3 input functions                    ; 2112  ;
+;     -- <=2 input functions                  ; 1895  ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 3082  ;
+;     -- arithmetic mode                      ; 2626  ;
+;                                             ;       ;
+; Total registers                             ; 792   ;
+;     -- Dedicated logic registers            ; 792   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 112   ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 548   ;
+; Total fan-out                               ; 19204 ;
+; Average fan-out                             ; 2.90  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                ;
++------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                              ; Library Name ;
++------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |fps_game                                            ; 5708 (1)          ; 792 (0)      ; 0           ; 0            ; 0       ; 0         ; 112  ; 0            ; |fps_game                                                                                                                                                        ;              ;
+;    |color_controller:u1|                             ; 1998 (0)          ; 117 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|color_controller:u1                                                                                                                                    ;              ;
+;       |vga_calc:u1|                                  ; 1998 (1905)       ; 117 (45)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|color_controller:u1|vga_calc:u1                                                                                                                        ;              ;
+;          |lpm_mult:Mult0|                            ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|color_controller:u1|vga_calc:u1|lpm_mult:Mult0                                                                                                         ;              ;
+;             |multcore:mult_core|                     ; 29 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|color_controller:u1|vga_calc:u1|lpm_mult:Mult0|multcore:mult_core                                                                                      ;              ;
+;                |mpar_add:padder|                     ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|color_controller:u1|vga_calc:u1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ;              ;
+;                   |lpm_add_sub:adder[0]|             ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|color_controller:u1|vga_calc:u1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ;              ;
+;                      |add_sub_2ch:auto_generated|    ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|color_controller:u1|vga_calc:u1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_2ch:auto_generated                      ;              ;
+;                   |mpar_add:sub_par_add|             ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|color_controller:u1|vga_calc:u1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ;              ;
+;                      |lpm_add_sub:adder[0]|          ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|color_controller:u1|vga_calc:u1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ;              ;
+;                         |add_sub_6ch:auto_generated| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|color_controller:u1|vga_calc:u1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_6ch:auto_generated ;              ;
+;          |sram_controller:u2|                        ; 0 (0)             ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|color_controller:u1|vga_calc:u1|sram_controller:u2                                                                                                     ;              ;
+;          |vga640480:u1|                              ; 64 (64)           ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|color_controller:u1|vga_calc:u1|vga640480:u1                                                                                                           ;              ;
+;    |game_controller:controller|                      ; 1282 (1204)       ; 535 (520)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|game_controller:controller                                                                                                                             ;              ;
+;       |RandomNumber:random_generator|                ; 78 (78)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|game_controller:controller|RandomNumber:random_generator                                                                                               ;              ;
+;    |sensor:post_sensor|                              ; 2427 (338)        ; 140 (107)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor                                                                                                                                     ;              ;
+;       |led_converter:converter_x0|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|led_converter:converter_x0                                                                                                          ;              ;
+;       |led_converter:converter_x1|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|led_converter:converter_x1                                                                                                          ;              ;
+;       |led_converter:converter_y0|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|led_converter:converter_y0                                                                                                          ;              ;
+;       |led_converter:converter_y1|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|led_converter:converter_y1                                                                                                          ;              ;
+;       |led_converter:converter_z0|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|led_converter:converter_z0                                                                                                          ;              ;
+;       |led_converter:converter_z1|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|led_converter:converter_z1                                                                                                          ;              ;
+;       |lpm_divide:Div0|                              ; 273 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div0                                                                                                                     ;              ;
+;          |lpm_divide_eso:auto_generated|             ; 273 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div0|lpm_divide_eso:auto_generated                                                                                       ;              ;
+;             |abs_divider_rbg:divider|                ; 273 (18)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div0|lpm_divide_eso:auto_generated|abs_divider_rbg:divider                                                               ;              ;
+;                |alt_u_div_23f:divider|               ; 232 (232)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div0|lpm_divide_eso:auto_generated|abs_divider_rbg:divider|alt_u_div_23f:divider                                         ;              ;
+;                |lpm_abs_3s9:my_abs_num|              ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div0|lpm_divide_eso:auto_generated|abs_divider_rbg:divider|lpm_abs_3s9:my_abs_num                                        ;              ;
+;       |lpm_divide:Div1|                              ; 273 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div1                                                                                                                     ;              ;
+;          |lpm_divide_eso:auto_generated|             ; 273 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div1|lpm_divide_eso:auto_generated                                                                                       ;              ;
+;             |abs_divider_rbg:divider|                ; 273 (18)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div1|lpm_divide_eso:auto_generated|abs_divider_rbg:divider                                                               ;              ;
+;                |alt_u_div_23f:divider|               ; 232 (232)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div1|lpm_divide_eso:auto_generated|abs_divider_rbg:divider|alt_u_div_23f:divider                                         ;              ;
+;                |lpm_abs_3s9:my_abs_num|              ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div1|lpm_divide_eso:auto_generated|abs_divider_rbg:divider|lpm_abs_3s9:my_abs_num                                        ;              ;
+;       |lpm_divide:Div2|                              ; 273 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div2                                                                                                                     ;              ;
+;          |lpm_divide_eso:auto_generated|             ; 273 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div2|lpm_divide_eso:auto_generated                                                                                       ;              ;
+;             |abs_divider_rbg:divider|                ; 273 (18)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div2|lpm_divide_eso:auto_generated|abs_divider_rbg:divider                                                               ;              ;
+;                |alt_u_div_23f:divider|               ; 232 (232)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div2|lpm_divide_eso:auto_generated|abs_divider_rbg:divider|alt_u_div_23f:divider                                         ;              ;
+;                |lpm_abs_3s9:my_abs_num|              ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div2|lpm_divide_eso:auto_generated|abs_divider_rbg:divider|lpm_abs_3s9:my_abs_num                                        ;              ;
+;       |lpm_divide:Div3|                              ; 239 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div3                                                                                                                     ;              ;
+;          |lpm_divide_fso:auto_generated|             ; 239 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div3|lpm_divide_fso:auto_generated                                                                                       ;              ;
+;             |abs_divider_sbg:divider|                ; 239 (26)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div3|lpm_divide_fso:auto_generated|abs_divider_sbg:divider                                                               ;              ;
+;                |alt_u_div_33f:divider|               ; 202 (202)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div3|lpm_divide_fso:auto_generated|abs_divider_sbg:divider|alt_u_div_33f:divider                                         ;              ;
+;                |lpm_abs_5s9:my_abs_num|              ; 11 (11)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div3|lpm_divide_fso:auto_generated|abs_divider_sbg:divider|lpm_abs_5s9:my_abs_num                                        ;              ;
+;       |lpm_divide:Div4|                              ; 267 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div4                                                                                                                     ;              ;
+;          |lpm_divide_fso:auto_generated|             ; 267 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div4|lpm_divide_fso:auto_generated                                                                                       ;              ;
+;             |abs_divider_sbg:divider|                ; 267 (27)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div4|lpm_divide_fso:auto_generated|abs_divider_sbg:divider                                                               ;              ;
+;                |alt_u_div_33f:divider|               ; 217 (217)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div4|lpm_divide_fso:auto_generated|abs_divider_sbg:divider|alt_u_div_33f:divider                                         ;              ;
+;                |lpm_abs_5s9:my_abs_num|              ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div4|lpm_divide_fso:auto_generated|abs_divider_sbg:divider|lpm_abs_5s9:my_abs_num                                        ;              ;
+;       |lpm_divide:Div5|                              ; 97 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div5                                                                                                                     ;              ;
+;          |lpm_divide_5so:auto_generated|             ; 97 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div5|lpm_divide_5so:auto_generated                                                                                       ;              ;
+;             |abs_divider_ibg:divider|                ; 97 (8)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div5|lpm_divide_5so:auto_generated|abs_divider_ibg:divider                                                               ;              ;
+;                |alt_u_div_g2f:divider|               ; 80 (80)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div5|lpm_divide_5so:auto_generated|abs_divider_ibg:divider|alt_u_div_g2f:divider                                         ;              ;
+;                |lpm_abs_sr9:my_abs_num|              ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div5|lpm_divide_5so:auto_generated|abs_divider_ibg:divider|lpm_abs_sr9:my_abs_num                                        ;              ;
+;       |lpm_divide:Div6|                              ; 97 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div6                                                                                                                     ;              ;
+;          |lpm_divide_5so:auto_generated|             ; 97 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div6|lpm_divide_5so:auto_generated                                                                                       ;              ;
+;             |abs_divider_ibg:divider|                ; 97 (8)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div6|lpm_divide_5so:auto_generated|abs_divider_ibg:divider                                                               ;              ;
+;                |alt_u_div_g2f:divider|               ; 80 (80)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div6|lpm_divide_5so:auto_generated|abs_divider_ibg:divider|alt_u_div_g2f:divider                                         ;              ;
+;                |lpm_abs_sr9:my_abs_num|              ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div6|lpm_divide_5so:auto_generated|abs_divider_ibg:divider|lpm_abs_sr9:my_abs_num                                        ;              ;
+;       |lpm_divide:Div7|                              ; 97 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div7                                                                                                                     ;              ;
+;          |lpm_divide_5so:auto_generated|             ; 97 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div7|lpm_divide_5so:auto_generated                                                                                       ;              ;
+;             |abs_divider_ibg:divider|                ; 97 (8)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div7|lpm_divide_5so:auto_generated|abs_divider_ibg:divider                                                               ;              ;
+;                |alt_u_div_g2f:divider|               ; 80 (80)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div7|lpm_divide_5so:auto_generated|abs_divider_ibg:divider|alt_u_div_g2f:divider                                         ;              ;
+;                |lpm_abs_sr9:my_abs_num|              ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Div7|lpm_divide_5so:auto_generated|abs_divider_ibg:divider|lpm_abs_sr9:my_abs_num                                        ;              ;
+;       |lpm_divide:Mod0|                              ; 125 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod0                                                                                                                     ;              ;
+;          |lpm_divide_2jo:auto_generated|             ; 125 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod0|lpm_divide_2jo:auto_generated                                                                                       ;              ;
+;             |abs_divider_cag:divider|                ; 125 (9)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod0|lpm_divide_2jo:auto_generated|abs_divider_cag:divider                                                               ;              ;
+;                |alt_u_div_40f:divider|               ; 107 (107)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod0|lpm_divide_2jo:auto_generated|abs_divider_cag:divider|alt_u_div_40f:divider                                         ;              ;
+;                |lpm_abs_kq9:my_abs_num|              ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod0|lpm_divide_2jo:auto_generated|abs_divider_cag:divider|lpm_abs_kq9:my_abs_num                                        ;              ;
+;       |lpm_divide:Mod1|                              ; 125 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod1                                                                                                                     ;              ;
+;          |lpm_divide_2jo:auto_generated|             ; 125 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod1|lpm_divide_2jo:auto_generated                                                                                       ;              ;
+;             |abs_divider_cag:divider|                ; 125 (9)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod1|lpm_divide_2jo:auto_generated|abs_divider_cag:divider                                                               ;              ;
+;                |alt_u_div_40f:divider|               ; 107 (107)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod1|lpm_divide_2jo:auto_generated|abs_divider_cag:divider|alt_u_div_40f:divider                                         ;              ;
+;                |lpm_abs_kq9:my_abs_num|              ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod1|lpm_divide_2jo:auto_generated|abs_divider_cag:divider|lpm_abs_kq9:my_abs_num                                        ;              ;
+;       |lpm_divide:Mod2|                              ; 125 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod2                                                                                                                     ;              ;
+;          |lpm_divide_2jo:auto_generated|             ; 125 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod2|lpm_divide_2jo:auto_generated                                                                                       ;              ;
+;             |abs_divider_cag:divider|                ; 125 (9)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod2|lpm_divide_2jo:auto_generated|abs_divider_cag:divider                                                               ;              ;
+;                |alt_u_div_40f:divider|               ; 107 (107)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod2|lpm_divide_2jo:auto_generated|abs_divider_cag:divider|alt_u_div_40f:divider                                         ;              ;
+;                |lpm_abs_kq9:my_abs_num|              ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|lpm_divide:Mod2|lpm_divide_2jo:auto_generated|abs_divider_cag:divider|lpm_abs_kq9:my_abs_num                                        ;              ;
+;       |uart:sensor_uart|                             ; 56 (56)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fps_game|sensor:post_sensor|uart:sensor_uart                                                                                                                    ;              ;
++------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_statuses[9]                                                               ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; Name                             ; object_statuses[9].attack~reg0 ; object_statuses[9].selected~reg0 ; object_statuses[9].normal~reg0 ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; object_statuses[9].normal~reg0   ; 0                              ; 0                                ; 0                              ;
+; object_statuses[9].selected~reg0 ; 0                              ; 1                                ; 1                              ;
+; object_statuses[9].attack~reg0   ; 1                              ; 0                                ; 1                              ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_statuses[8]                                                               ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; Name                             ; object_statuses[8].attack~reg0 ; object_statuses[8].selected~reg0 ; object_statuses[8].normal~reg0 ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; object_statuses[8].normal~reg0   ; 0                              ; 0                                ; 0                              ;
+; object_statuses[8].selected~reg0 ; 0                              ; 1                                ; 1                              ;
+; object_statuses[8].attack~reg0   ; 1                              ; 0                                ; 1                              ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_statuses[7]                                                               ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; Name                             ; object_statuses[7].attack~reg0 ; object_statuses[7].selected~reg0 ; object_statuses[7].normal~reg0 ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; object_statuses[7].normal~reg0   ; 0                              ; 0                                ; 0                              ;
+; object_statuses[7].selected~reg0 ; 0                              ; 1                                ; 1                              ;
+; object_statuses[7].attack~reg0   ; 1                              ; 0                                ; 1                              ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_statuses[6]                                                               ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; Name                             ; object_statuses[6].attack~reg0 ; object_statuses[6].selected~reg0 ; object_statuses[6].normal~reg0 ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; object_statuses[6].normal~reg0   ; 0                              ; 0                                ; 0                              ;
+; object_statuses[6].selected~reg0 ; 0                              ; 1                                ; 1                              ;
+; object_statuses[6].attack~reg0   ; 1                              ; 0                                ; 1                              ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_statuses[5]                                                               ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; Name                             ; object_statuses[5].attack~reg0 ; object_statuses[5].selected~reg0 ; object_statuses[5].normal~reg0 ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; object_statuses[5].normal~reg0   ; 0                              ; 0                                ; 0                              ;
+; object_statuses[5].selected~reg0 ; 0                              ; 1                                ; 1                              ;
+; object_statuses[5].attack~reg0   ; 1                              ; 0                                ; 1                              ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_statuses[4]                                                               ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; Name                             ; object_statuses[4].attack~reg0 ; object_statuses[4].selected~reg0 ; object_statuses[4].normal~reg0 ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; object_statuses[4].normal~reg0   ; 0                              ; 0                                ; 0                              ;
+; object_statuses[4].selected~reg0 ; 0                              ; 1                                ; 1                              ;
+; object_statuses[4].attack~reg0   ; 1                              ; 0                                ; 1                              ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_statuses[3]                                                               ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; Name                             ; object_statuses[3].attack~reg0 ; object_statuses[3].selected~reg0 ; object_statuses[3].normal~reg0 ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; object_statuses[3].normal~reg0   ; 0                              ; 0                                ; 0                              ;
+; object_statuses[3].selected~reg0 ; 0                              ; 1                                ; 1                              ;
+; object_statuses[3].attack~reg0   ; 1                              ; 0                                ; 1                              ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_statuses[2]                                                               ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; Name                             ; object_statuses[2].attack~reg0 ; object_statuses[2].selected~reg0 ; object_statuses[2].normal~reg0 ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; object_statuses[2].normal~reg0   ; 0                              ; 0                                ; 0                              ;
+; object_statuses[2].selected~reg0 ; 0                              ; 1                                ; 1                              ;
+; object_statuses[2].attack~reg0   ; 1                              ; 0                                ; 1                              ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_statuses[1]                                                               ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; Name                             ; object_statuses[1].attack~reg0 ; object_statuses[1].selected~reg0 ; object_statuses[1].normal~reg0 ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; object_statuses[1].normal~reg0   ; 0                              ; 0                                ; 0                              ;
+; object_statuses[1].selected~reg0 ; 0                              ; 1                                ; 1                              ;
+; object_statuses[1].attack~reg0   ; 1                              ; 0                                ; 1                              ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_statuses[0]                                                               ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; Name                             ; object_statuses[0].attack~reg0 ; object_statuses[0].selected~reg0 ; object_statuses[0].normal~reg0 ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+; object_statuses[0].normal~reg0   ; 0                              ; 0                                ; 0                              ;
+; object_statuses[0].selected~reg0 ; 0                              ; 1                                ; 1                              ;
+; object_statuses[0].attack~reg0   ; 1                              ; 0                                ; 1                              ;
++----------------------------------+--------------------------------+----------------------------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_types[9]                                                                                  ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; Name                          ; object_types[9].enemy~reg0 ; object_types[9].tommygun~reg0 ; object_types[9].medical~reg0 ; object_types[9].none~reg0 ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; object_types[9].none~reg0     ; 0                          ; 0                             ; 0                            ; 0                         ;
+; object_types[9].medical~reg0  ; 0                          ; 0                             ; 1                            ; 1                         ;
+; object_types[9].tommygun~reg0 ; 0                          ; 1                             ; 0                            ; 1                         ;
+; object_types[9].enemy~reg0    ; 1                          ; 0                             ; 0                            ; 1                         ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_types[8]                                                                                  ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; Name                          ; object_types[8].enemy~reg0 ; object_types[8].tommygun~reg0 ; object_types[8].medical~reg0 ; object_types[8].none~reg0 ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; object_types[8].none~reg0     ; 0                          ; 0                             ; 0                            ; 0                         ;
+; object_types[8].medical~reg0  ; 0                          ; 0                             ; 1                            ; 1                         ;
+; object_types[8].tommygun~reg0 ; 0                          ; 1                             ; 0                            ; 1                         ;
+; object_types[8].enemy~reg0    ; 1                          ; 0                             ; 0                            ; 1                         ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_types[7]                                                                                  ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; Name                          ; object_types[7].enemy~reg0 ; object_types[7].tommygun~reg0 ; object_types[7].medical~reg0 ; object_types[7].none~reg0 ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; object_types[7].none~reg0     ; 0                          ; 0                             ; 0                            ; 0                         ;
+; object_types[7].medical~reg0  ; 0                          ; 0                             ; 1                            ; 1                         ;
+; object_types[7].tommygun~reg0 ; 0                          ; 1                             ; 0                            ; 1                         ;
+; object_types[7].enemy~reg0    ; 1                          ; 0                             ; 0                            ; 1                         ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_types[6]                                                                                  ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; Name                          ; object_types[6].enemy~reg0 ; object_types[6].tommygun~reg0 ; object_types[6].medical~reg0 ; object_types[6].none~reg0 ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; object_types[6].none~reg0     ; 0                          ; 0                             ; 0                            ; 0                         ;
+; object_types[6].medical~reg0  ; 0                          ; 0                             ; 1                            ; 1                         ;
+; object_types[6].tommygun~reg0 ; 0                          ; 1                             ; 0                            ; 1                         ;
+; object_types[6].enemy~reg0    ; 1                          ; 0                             ; 0                            ; 1                         ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_types[5]                                                                                  ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; Name                          ; object_types[5].enemy~reg0 ; object_types[5].tommygun~reg0 ; object_types[5].medical~reg0 ; object_types[5].none~reg0 ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; object_types[5].none~reg0     ; 0                          ; 0                             ; 0                            ; 0                         ;
+; object_types[5].medical~reg0  ; 0                          ; 0                             ; 1                            ; 1                         ;
+; object_types[5].tommygun~reg0 ; 0                          ; 1                             ; 0                            ; 1                         ;
+; object_types[5].enemy~reg0    ; 1                          ; 0                             ; 0                            ; 1                         ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_types[4]                                                                                  ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; Name                          ; object_types[4].enemy~reg0 ; object_types[4].tommygun~reg0 ; object_types[4].medical~reg0 ; object_types[4].none~reg0 ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; object_types[4].none~reg0     ; 0                          ; 0                             ; 0                            ; 0                         ;
+; object_types[4].medical~reg0  ; 0                          ; 0                             ; 1                            ; 1                         ;
+; object_types[4].tommygun~reg0 ; 0                          ; 1                             ; 0                            ; 1                         ;
+; object_types[4].enemy~reg0    ; 1                          ; 0                             ; 0                            ; 1                         ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_types[3]                                                                                  ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; Name                          ; object_types[3].enemy~reg0 ; object_types[3].tommygun~reg0 ; object_types[3].medical~reg0 ; object_types[3].none~reg0 ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; object_types[3].none~reg0     ; 0                          ; 0                             ; 0                            ; 0                         ;
+; object_types[3].medical~reg0  ; 0                          ; 0                             ; 1                            ; 1                         ;
+; object_types[3].tommygun~reg0 ; 0                          ; 1                             ; 0                            ; 1                         ;
+; object_types[3].enemy~reg0    ; 1                          ; 0                             ; 0                            ; 1                         ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_types[2]                                                                                  ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; Name                          ; object_types[2].enemy~reg0 ; object_types[2].tommygun~reg0 ; object_types[2].medical~reg0 ; object_types[2].none~reg0 ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; object_types[2].none~reg0     ; 0                          ; 0                             ; 0                            ; 0                         ;
+; object_types[2].medical~reg0  ; 0                          ; 0                             ; 1                            ; 1                         ;
+; object_types[2].tommygun~reg0 ; 0                          ; 1                             ; 0                            ; 1                         ;
+; object_types[2].enemy~reg0    ; 1                          ; 0                             ; 0                            ; 1                         ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_types[1]                                                                                  ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; Name                          ; object_types[1].enemy~reg0 ; object_types[1].tommygun~reg0 ; object_types[1].medical~reg0 ; object_types[1].none~reg0 ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; object_types[1].none~reg0     ; 0                          ; 0                             ; 0                            ; 0                         ;
+; object_types[1].medical~reg0  ; 0                          ; 0                             ; 1                            ; 1                         ;
+; object_types[1].tommygun~reg0 ; 0                          ; 1                             ; 0                            ; 1                         ;
+; object_types[1].enemy~reg0    ; 1                          ; 0                             ; 0                            ; 1                         ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|object_types[0]                                                                                  ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; Name                          ; object_types[0].enemy~reg0 ; object_types[0].tommygun~reg0 ; object_types[0].medical~reg0 ; object_types[0].none~reg0 ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+; object_types[0].none~reg0     ; 0                          ; 0                             ; 0                            ; 0                         ;
+; object_types[0].medical~reg0  ; 0                          ; 0                             ; 1                            ; 1                         ;
+; object_types[0].tommygun~reg0 ; 0                          ; 1                             ; 0                            ; 1                         ;
+; object_types[0].enemy~reg0    ; 1                          ; 0                             ; 0                            ; 1                         ;
++-------------------------------+----------------------------+-------------------------------+------------------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|game_controller:controller|control_state                                                                                           ;
++---------------------------+---------------------------+---------------------------+------------------------+-------------------------+-----------------------+
+; Name                      ; control_state.update_post ; control_state.object_iter ; control_state.post_act ; control_state.post_iter ; control_state.waiting ;
++---------------------------+---------------------------+---------------------------+------------------------+-------------------------+-----------------------+
+; control_state.waiting     ; 0                         ; 0                         ; 0                      ; 0                       ; 0                     ;
+; control_state.post_iter   ; 0                         ; 0                         ; 0                      ; 1                       ; 1                     ;
+; control_state.post_act    ; 0                         ; 0                         ; 1                      ; 0                       ; 1                     ;
+; control_state.object_iter ; 0                         ; 1                         ; 0                      ; 0                       ; 1                     ;
+; control_state.update_post ; 1                         ; 0                         ; 0                      ; 0                       ; 1                     ;
++---------------------------+---------------------------+---------------------------+------------------------+-------------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fps_game|sensor:post_sensor|current_state                                                                   ;
++--------------------------+-------------------------+--------------------------+-------------------------+--------------------+
+; Name                     ; current_state.check_sum ; current_state.value_data ; current_state.type_data ; current_state.head ;
++--------------------------+-------------------------+--------------------------+-------------------------+--------------------+
+; current_state.head       ; 0                       ; 0                        ; 0                       ; 0                  ;
+; current_state.type_data  ; 0                       ; 0                        ; 1                       ; 1                  ;
+; current_state.value_data ; 0                       ; 1                        ; 0                       ; 1                  ;
+; current_state.check_sum  ; 1                       ; 0                        ; 0                       ; 1                  ;
++--------------------------+-------------------------+--------------------------+-------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                        ;
++----------------------------------------------------------------------------+------------------------------------------------------------------------------+
+; Register name                                                              ; Reason for Removal                                                           ;
++----------------------------------------------------------------------------+------------------------------------------------------------------------------+
+; color_controller:u1|vga_calc:u1|background_addr[19]                        ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|addr_cnt[19]                               ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[0]~en    ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[1]~en    ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[2]~en    ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[3]~en    ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[4]~en    ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[5]~en    ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[6]~en    ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[7]~en    ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[8]~en    ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[9]~en    ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[10]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[11]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[12]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[13]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[14]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[15]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[16]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[17]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[18]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[19]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[20]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[21]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[22]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[23]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[24]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[25]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[26]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[27]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[28]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[29]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[30]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[31]~en   ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_ce            ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_oe            ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_we            ; Stuck at VCC due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|background_addr[18]                        ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|addr_cnt[18]                               ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[31]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[30]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[29]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[28]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[27]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[26]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[25]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[24]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[23]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[22]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[21]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[20]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[19]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[18]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[17]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[16]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[15]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[14]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[13]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[12]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[11]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[10]~reg0 ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[9]~reg0  ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[8]~reg0  ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[7]~reg0  ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[6]~reg0  ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[5]~reg0  ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[4]~reg0  ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[3]~reg0  ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[2]~reg0  ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[1]~reg0  ; Stuck at GND due to stuck port data_in                                       ;
+; color_controller:u1|vga_calc:u1|sram_controller:u2|base_sram_data[0]~reg0  ; Stuck at GND due to stuck port data_in                                       ;
+; game_controller:controller|show_post_y[0]                                  ; Merged with game_controller:controller|show_post_y[1]                        ;
+; game_controller:controller|RandomNumber:random_generator|seed[0]           ; Merged with game_controller:controller|RandomNumber:random_generator|seed[1] ;
+; game_controller:controller|object_statuses[9].normal~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[9].attack~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[8].normal~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[8].attack~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[7].normal~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[7].attack~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[6].normal~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[6].attack~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[5].normal~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[5].attack~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[4].normal~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[4].attack~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[3].normal~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[3].attack~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[2].normal~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[2].attack~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[1].normal~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[1].attack~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[0].normal~reg0                  ; Lost fanout                                                                  ;
+; game_controller:controller|object_statuses[0].attack~reg0                  ; Lost fanout                                                                  ;
+; Total Number of Removed Registers = 93                                     ;                                                                              ;
++----------------------------------------------------------------------------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                    ;
++-----------------------------------------------------+---------------------------+----------------------------------------------+
+; Register name                                       ; Reason for Removal        ; Registers Removed due to This Register       ;
++-----------------------------------------------------+---------------------------+----------------------------------------------+
+; color_controller:u1|vga_calc:u1|background_addr[19] ; Stuck at GND              ; color_controller:u1|vga_calc:u1|addr_cnt[19] ;
+;                                                     ; due to stuck port data_in ;                                              ;
+; color_controller:u1|vga_calc:u1|background_addr[18] ; Stuck at GND              ; color_controller:u1|vga_calc:u1|addr_cnt[18] ;
+;                                                     ; due to stuck port data_in ;                                              ;
++-----------------------------------------------------+---------------------------+----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 792   ;
+; Number of registers using Synchronous Clear  ; 73    ;
+; Number of registers using Synchronous Load   ; 72    ;
+; Number of registers using Asynchronous Clear ; 198   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 614   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Inverted Register Statistics                               ;
++--------------------------------------------------+---------+
+; Inverted Register                                ; Fan out ;
++--------------------------------------------------+---------+
+; game_controller:controller|bullet_num[4]         ; 5       ;
+; game_controller:controller|bullet_num[2]         ; 4       ;
+; color_controller:u1|vga_calc:u1|vga640480:u1|hs1 ; 10      ;
+; color_controller:u1|vga_calc:u1|vga640480:u1|vs1 ; 10      ;
+; game_controller:controller|show_post_x[6]        ; 3       ;
+; game_controller:controller|show_post_x[5]        ; 3       ;
+; game_controller:controller|show_post_x[2]        ; 3       ;
+; game_controller:controller|show_post_y[2]        ; 3       ;
+; game_controller:controller|show_post_y[5]        ; 3       ;
+; game_controller:controller|show_post_y[6]        ; 3       ;
+; game_controller:controller|player_hp[6]          ; 6       ;
+; game_controller:controller|player_hp[5]          ; 6       ;
+; game_controller:controller|player_hp[2]          ; 5       ;
+; sensor:post_sensor|uart:sensor_uart|pointer[4]   ; 9       ;
+; sensor:post_sensor|uart:sensor_uart|pointer[2]   ; 12      ;
+; sensor:post_sensor|uart:sensor_uart|pointer[1]   ; 12      ;
+; sensor:post_sensor|uart:sensor_uart|pointer[0]   ; 13      ;
+; sensor:post_sensor|uart:sensor_uart|pointer[3]   ; 5       ;
+; Total number of inverted registers = 18          ;         ;
++--------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |fps_game|game_controller:controller|cool_down_count[3]        ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |fps_game|game_controller:controller|cool_down_count[4]        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |fps_game|sensor:post_sensor|uart:sensor_uart|data[3]          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |fps_game|game_controller:controller|bullet_update_count[4]    ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |fps_game|sensor:post_sensor|data_buffer[4]                    ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |fps_game|sensor:post_sensor|pointer[0]                        ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |fps_game|game_controller:controller|iter_count[3]             ;
+; 9:1                ; 9 bits    ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; Yes        ; |fps_game|color_controller:u1|vga_calc:u1|vga640480:u1|r1[2]   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; Yes        ; |fps_game|game_controller:controller|player_hp[1]              ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |fps_game|game_controller:controller|player_hp[3]              ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 3 LEs                ; 15 LEs                 ; Yes        ; |fps_game|game_controller:controller|bullet_num[0]             ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_xs[9][4]           ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_ys[9][0]           ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_xs[8][0]           ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_ys[8][7]           ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_xs[7][0]           ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_ys[7][3]           ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_xs[6][9]           ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_ys[6][2]           ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_xs[5][0]           ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_ys[5][1]           ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_xs[4][6]           ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_ys[4][0]           ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_xs[3][8]           ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_ys[3][2]           ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_xs[2][2]           ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_ys[2][8]           ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_xs[1][1]           ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_ys[1][6]           ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 20 LEs               ; 60 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_xs[0][9]           ;
+; 12:1               ; 9 bits    ; 72 LEs        ; 18 LEs               ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_ys[0][2]           ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 4 LEs                ; 24 LEs                 ; Yes        ; |fps_game|game_controller:controller|post_selected[2]          ;
+; 15:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[9][0]       ;
+; 15:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[8][8]       ;
+; 15:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[7][1]       ;
+; 15:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[6][1]       ;
+; 15:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[5][7]       ;
+; 15:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[4][7]       ;
+; 15:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[3][4]       ;
+; 15:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[2][8]       ;
+; 15:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[1][9]       ;
+; 15:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[0][8]       ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[9][2]       ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[8][5]       ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[7][5]       ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[6][5]       ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[5][5]       ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[4][10]      ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[3][10]      ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[2][10]      ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[1][10]      ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_values[0][10]      ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 6 LEs                ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[9][0]       ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 6 LEs                ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[8][0]       ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 6 LEs                ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[7][4]       ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 6 LEs                ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[6][0]       ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 6 LEs                ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[5][0]       ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 6 LEs                ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[4][0]       ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 6 LEs                ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[3][0]       ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 6 LEs                ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[2][0]       ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 6 LEs                ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[1][0]       ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 6 LEs                ; 54 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[0][2]       ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[9][7]       ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[8][7]       ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[7][7]       ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[6][7]       ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[5][7]       ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[4][7]       ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[3][7]       ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[2][7]       ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[1][7]       ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |fps_game|game_controller:controller|object_counts[0][7]       ;
+; 33:1               ; 5 bits    ; 110 LEs       ; 10 LEs               ; 100 LEs                ; Yes        ; |fps_game|sensor:post_sensor|uart:sensor_uart|pointer[0]       ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |fps_game|game_controller:controller|player_hp[5]              ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; Yes        ; |fps_game|game_controller:controller|bullet_num[4]             ;
+; 10:1               ; 15 bits   ; 90 LEs        ; 90 LEs               ; 0 LEs                  ; No         ; |fps_game|game_controller:controller|Mux7                      ;
+; 10:1               ; 45 bits   ; 270 LEs       ; 270 LEs              ; 0 LEs                  ; No         ; |fps_game|game_controller:controller|Mux42                     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |fps_game|game_controller:controller|Selector577               ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |fps_game|sensor:post_sensor|current_state                     ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; No         ; |fps_game|color_controller:u1|vga_calc:u1|gunOK                ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 4 LEs                ; 14 LEs                 ; No         ; |fps_game|game_controller:controller|object_statuses[9].attack ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 4 LEs                ; 14 LEs                 ; No         ; |fps_game|game_controller:controller|object_statuses[8].attack ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 4 LEs                ; 14 LEs                 ; No         ; |fps_game|game_controller:controller|object_statuses[7].attack ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 4 LEs                ; 14 LEs                 ; No         ; |fps_game|game_controller:controller|object_statuses[6].normal ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 4 LEs                ; 14 LEs                 ; No         ; |fps_game|game_controller:controller|object_statuses[5].attack ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 4 LEs                ; 14 LEs                 ; No         ; |fps_game|game_controller:controller|object_statuses[4].normal ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 4 LEs                ; 14 LEs                 ; No         ; |fps_game|game_controller:controller|object_statuses[3].attack ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 4 LEs                ; 14 LEs                 ; No         ; |fps_game|game_controller:controller|object_statuses[2].attack ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 4 LEs                ; 14 LEs                 ; No         ; |fps_game|game_controller:controller|object_statuses[1].attack ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 4 LEs                ; 14 LEs                 ; No         ; |fps_game|game_controller:controller|object_statuses[0].normal ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                                   ;
+; LPM_WIDTHD             ; 9              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_2jo ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Mod1 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                                   ;
+; LPM_WIDTHD             ; 9              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_2jo ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Mod2 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                                   ;
+; LPM_WIDTHD             ; 9              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_2jo ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div5 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                   ;
+; LPM_WIDTHD             ; 7              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_5so ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div6 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                   ;
+; LPM_WIDTHD             ; 7              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_5so ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div7 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                   ;
+; LPM_WIDTHD             ; 7              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_5so ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 17             ; Untyped                                   ;
+; LPM_WIDTHD             ; 9              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_eso ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div1 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 17             ; Untyped                                   ;
+; LPM_WIDTHD             ; 9              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_eso ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div2 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 17             ; Untyped                                   ;
+; LPM_WIDTHD             ; 9              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_eso ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: color_controller:u1|vga_calc:u1|lpm_mult:Mult0 ;
++------------------------------------------------+------------+-----------------------------------+
+; Parameter Name                                 ; Value      ; Type                              ;
++------------------------------------------------+------------+-----------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE                    ;
+; LPM_WIDTHA                                     ; 10         ; Untyped                           ;
+; LPM_WIDTHB                                     ; 7          ; Untyped                           ;
+; LPM_WIDTHP                                     ; 17         ; Untyped                           ;
+; LPM_WIDTHR                                     ; 17         ; Untyped                           ;
+; LPM_WIDTHS                                     ; 1          ; Untyped                           ;
+; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped                           ;
+; LPM_PIPELINE                                   ; 0          ; Untyped                           ;
+; LATENCY                                        ; 0          ; Untyped                           ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped                           ;
+; INPUT_B_IS_CONSTANT                            ; YES        ; Untyped                           ;
+; USE_EAB                                        ; OFF        ; Untyped                           ;
+; MAXIMIZE_SPEED                                 ; 6          ; Untyped                           ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped                           ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped                           ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K               ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped                           ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped                           ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped                           ;
+; CBXI_PARAMETER                                 ; NOTHING    ; Untyped                           ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped                           ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped                           ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped                           ;
++------------------------------------------------+------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div3 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                   ;
+; LPM_WIDTHD             ; 7              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_fso ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sensor:post_sensor|lpm_divide:Div4 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 19             ; Untyped                                   ;
+; LPM_WIDTHD             ; 7              ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_fso ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                         ;
++---------------------------------------+------------------------------------------------+
+; Name                                  ; Value                                          ;
++---------------------------------------+------------------------------------------------+
+; Number of entity instances            ; 1                                              ;
+; Entity Instance                       ; color_controller:u1|vga_calc:u1|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 10                                             ;
+;     -- LPM_WIDTHB                     ; 7                                              ;
+;     -- LPM_WIDTHP                     ; 17                                             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                            ;
+;     -- USE_EAB                        ; OFF                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                             ;
++---------------------------------------+------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "color_controller:u1|vga_calc:u1|sram_controller:u2"                                              ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; rwselect          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_read[22..16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_read[6..0]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "color_controller:u1"     ;
++-------------------+-------+----------+--------------+
+; Port              ; Type  ; Severity ; Details      ;
++-------------------+-------+----------+--------------+
+; bullet_num[31..5] ; Input ; Info     ; Stuck at GND ;
++-------------------+-------+----------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game_controller:controller|RandomNumber:random_generator"                                 ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; num[12..9] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:12     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Sat Jun 02 21:56:21 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fps_game -c fps_game
+Info (20029): Only one processor detected - disabling parallel compilation
+Info (12021): Found 2 design units, including 1 entities, in source file fps_game.vhd
+    Info (12022): Found design unit 1: fps_game-beh
+    Info (12023): Found entity 1: fps_game
+Info (12021): Found 2 design units, including 1 entities, in source file game_controller.vhd
+    Info (12022): Found design unit 1: game_controller-beh
+    Info (12023): Found entity 1: game_controller
+Info (12021): Found 1 design units, including 0 entities, in source file my_lib/data_type.vhd
+    Info (12022): Found design unit 1: data_type
+Info (12021): Found 2 design units, including 1 entities, in source file sensor.vhd
+    Info (12022): Found design unit 1: sensor-beh
+    Info (12023): Found entity 1: sensor
+Info (12021): Found 2 design units, including 1 entities, in source file color_controller.vhd
+    Info (12022): Found design unit 1: color_controller-bhv
+    Info (12023): Found entity 1: color_controller
+Info (12021): Found 2 design units, including 1 entities, in source file led_converter.vhd
+    Info (12022): Found design unit 1: led_converter-bhv
+    Info (12023): Found entity 1: led_converter
+Info (12021): Found 2 design units, including 1 entities, in source file uart.vhd
+    Info (12022): Found design unit 1: uart-beh
+    Info (12023): Found entity 1: uart
+Info (12021): Found 2 design units, including 1 entities, in source file utils/randomnumber.vhd
+    Info (12022): Found design unit 1: RandomNumber-struc
+    Info (12023): Found entity 1: RandomNumber
+Info (12021): Found 2 design units, including 1 entities, in source file sixtyhzsignalgenerator.vhd
+    Info (12022): Found design unit 1: SixtyHzSignalGenerator-struc
+    Info (12023): Found entity 1: SixtyHzSignalGenerator
+Info (12021): Found 2 design units, including 1 entities, in source file vga_calc.vhd
+    Info (12022): Found design unit 1: vga_calc-bhv
+    Info (12023): Found entity 1: vga_calc
+Info (12021): Found 2 design units, including 1 entities, in source file vga640480.vhd
+    Info (12022): Found design unit 1: vga640480-behavior
+    Info (12023): Found entity 1: vga640480
+Info (12021): Found 2 design units, including 1 entities, in source file sram_controller.vhd
+    Info (12022): Found design unit 1: sram_controller-bhv
+    Info (12023): Found entity 1: sram_controller
+Info (12127): Elaborating entity "fps_game" for the top level hierarchy
+Info (12128): Elaborating entity "sensor" for hierarchy "sensor:post_sensor"
+Info (12128): Elaborating entity "uart" for hierarchy "sensor:post_sensor|uart:sensor_uart"
+Info (12128): Elaborating entity "led_converter" for hierarchy "sensor:post_sensor|led_converter:converter_x1"
+Info (12128): Elaborating entity "game_controller" for hierarchy "game_controller:controller"
+Warning (10631): VHDL Process Statement warning at game_controller.vhd(85): inferring latch(es) for signal or variable "game_over_stage", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at game_controller.vhd(85): inferring latch(es) for signal or variable "start_stage", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "start_stage" at game_controller.vhd(85)
+Info (10041): Inferred latch for "game_over_stage" at game_controller.vhd(85)
+Info (12128): Elaborating entity "RandomNumber" for hierarchy "game_controller:controller|RandomNumber:random_generator"
+Info (12128): Elaborating entity "color_controller" for hierarchy "color_controller:u1"
+Info (12128): Elaborating entity "vga_calc" for hierarchy "color_controller:u1|vga_calc:u1"
+Warning (10036): Verilog HDL or VHDL warning at vga_calc.vhd(99): object "enemy_x" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at vga_calc.vhd(99): object "medical_x" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at vga_calc.vhd(99): object "gun_x" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at vga_calc.vhd(100): object "enemy_y" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at vga_calc.vhd(100): object "medical_y" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at vga_calc.vhd(100): object "gun_y" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at vga_calc.vhd(106): used implicit default value for signal "data_wrote" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(142): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(142): signal "s_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(151): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(151): signal "s_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(152): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(152): signal "my_hp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(164): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(164): signal "s_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(165): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(165): signal "bullet_num" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(177): signal "postX" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(177): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(177): signal "postY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(177): signal "s_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(191): signal "object_types" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(193): signal "object_xs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(193): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(193): signal "object_ys" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(193): signal "s_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(194): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(194): signal "object_xs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(195): signal "s_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(195): signal "object_ys" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(200): signal "object_xs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(200): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(200): signal "object_ys" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(200): signal "s_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(201): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(201): signal "object_xs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(202): signal "s_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(202): signal "object_ys" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(207): signal "object_xs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(207): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(207): signal "object_ys" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(207): signal "s_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(208): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(208): signal "object_xs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(209): signal "s_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(209): signal "object_ys" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(220): signal "s_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(220): signal "s_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(229): signal "gameover" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(238): signal "gamestart" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(297): signal "backgroundOK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(298): signal "q_background_calc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(301): signal "gamestart" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(307): signal "gameover" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(320): signal "gunOK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(322): signal "medicalOK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(326): signal "enemyOK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at vga_calc.vhd(329): signal "q_background_calc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "vga640480" for hierarchy "color_controller:u1|vga_calc:u1|vga640480:u1"
+Info (12128): Elaborating entity "sram_controller" for hierarchy "color_controller:u1|vga_calc:u1|sram_controller:u2"
+Info (12128): Elaborating entity "SixtyHzSignalGenerator" for hierarchy "SixtyHzSignalGenerator:u2"
+Info (278001): Inferred 12 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sensor:post_sensor|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sensor:post_sensor|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sensor:post_sensor|Mod2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sensor:post_sensor|Div5"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sensor:post_sensor|Div6"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sensor:post_sensor|Div7"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sensor:post_sensor|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sensor:post_sensor|Div1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sensor:post_sensor|Div2"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "color_controller:u1|vga_calc:u1|Mult0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sensor:post_sensor|Div3"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sensor:post_sensor|Div4"
+Info (12130): Elaborated megafunction instantiation "sensor:post_sensor|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "sensor:post_sensor|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "9"
+    Info (12134): Parameter "LPM_WIDTHD" = "9"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2jo.tdf
+    Info (12023): Found entity 1: lpm_divide_2jo
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_cag.tdf
+    Info (12023): Found entity 1: abs_divider_cag
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_40f.tdf
+    Info (12023): Found entity 1: alt_u_div_40f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info (12023): Found entity 1: add_sub_lkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info (12023): Found entity 1: add_sub_mkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_kq9.tdf
+    Info (12023): Found entity 1: lpm_abs_kq9
+Info (12130): Elaborated megafunction instantiation "sensor:post_sensor|lpm_divide:Div5"
+Info (12133): Instantiated megafunction "sensor:post_sensor|lpm_divide:Div5" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_5so.tdf
+    Info (12023): Found entity 1: lpm_divide_5so
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_ibg.tdf
+    Info (12023): Found entity 1: abs_divider_ibg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g2f.tdf
+    Info (12023): Found entity 1: alt_u_div_g2f
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_iq9.tdf
+    Info (12023): Found entity 1: lpm_abs_iq9
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_sr9.tdf
+    Info (12023): Found entity 1: lpm_abs_sr9
+Info (12130): Elaborated megafunction instantiation "sensor:post_sensor|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "sensor:post_sensor|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "17"
+    Info (12134): Parameter "LPM_WIDTHD" = "9"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_eso.tdf
+    Info (12023): Found entity 1: lpm_divide_eso
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_rbg.tdf
+    Info (12023): Found entity 1: abs_divider_rbg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_23f.tdf
+    Info (12023): Found entity 1: alt_u_div_23f
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_3s9.tdf
+    Info (12023): Found entity 1: lpm_abs_3s9
+Info (12130): Elaborated megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "color_controller:u1|vga_calc:u1|lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "10"
+    Info (12134): Parameter "LPM_WIDTHB" = "7"
+    Info (12134): Parameter "LPM_WIDTHP" = "17"
+    Info (12134): Parameter "LPM_WIDTHR" = "17"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12131): Elaborated megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_2ch.tdf
+    Info (12023): Found entity 1: add_sub_2ch
+Info (12131): Elaborated megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_6ch.tdf
+    Info (12023): Found entity 1: add_sub_6ch
+Info (12131): Elaborated megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "color_controller:u1|vga_calc:u1|lpm_mult:Mult0"
+Info (12130): Elaborated megafunction instantiation "sensor:post_sensor|lpm_divide:Div3"
+Info (12133): Instantiated megafunction "sensor:post_sensor|lpm_divide:Div3" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "19"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fso.tdf
+    Info (12023): Found entity 1: lpm_divide_fso
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_sbg.tdf
+    Info (12023): Found entity 1: abs_divider_sbg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_33f.tdf
+    Info (12023): Found entity 1: alt_u_div_33f
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_5s9.tdf
+    Info (12023): Found entity 1: lpm_abs_5s9
+Info (12130): Elaborated megafunction instantiation "sensor:post_sensor|lpm_divide:Div4"
+Info (12133): Instantiated megafunction "sensor:post_sensor|lpm_divide:Div4" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "19"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (13014): Ignored 120 buffer(s)
+    Info (13016): Ignored 120 CARRY_SUM buffer(s)
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "base_sram_we" is stuck at VCC
+    Warning (13410): Pin "base_sram_oe" is stuck at GND
+    Warning (13410): Pin "base_sram_ce" is stuck at GND
+    Warning (13410): Pin "base_sram_addr[18]" is stuck at GND
+    Warning (13410): Pin "base_sram_addr[19]" is stuck at GND
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register sensor:post_sensor|angx[8] will power up to Low
+    Critical Warning (18010): Register sensor:post_sensor|angx[6] will power up to Low
+    Critical Warning (18010): Register sensor:post_sensor|angx[3] will power up to Low
+    Critical Warning (18010): Register sensor:post_sensor|angx[2] will power up to Low
+    Critical Warning (18010): Register sensor:post_sensor|angy[8] will power up to Low
+    Critical Warning (18010): Register sensor:post_sensor|angy[6] will power up to Low
+    Critical Warning (18010): Register sensor:post_sensor|angy[3] will power up to Low
+    Critical Warning (18010): Register sensor:post_sensor|angy[2] will power up to Low
+    Critical Warning (18010): Register sensor:post_sensor|angz[8] will power up to Low
+    Critical Warning (18010): Register sensor:post_sensor|angz[6] will power up to Low
+    Critical Warning (18010): Register sensor:post_sensor|angz[3] will power up to Low
+    Critical Warning (18010): Register sensor:post_sensor|angz[2] will power up to Low
+Info (17049): 20 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "sensor:post_sensor|lpm_divide:Div3|lpm_divide_fso:auto_generated|abs_divider_sbg:divider|alt_u_div_33f:divider|op_6~6"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 6267 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 76 output pins
+    Info (21060): Implemented 32 bidirectional pins
+    Info (21061): Implemented 6155 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 79 warnings
+    Info: Peak virtual memory: 555 megabytes
+    Info: Processing ended: Sat Jun 02 21:56:37 2018
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:15
+
+
